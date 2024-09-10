@@ -62,3 +62,23 @@ window.onscroll = () =>{
       body.classList.remove('active');
    }
 }
+
+// Get the form element
+const form = document.getElementById('update-form');
+
+// Add an event listener to the form's submit event
+form.addEventListener('submit', (e) => {
+  // Prevent the default form submission behavior
+  e.preventDefault();
+
+  // Create a popup alert using SweetAlert2
+  Swal.fire({
+    title: 'Success!',
+    text: 'Profile is modified',
+    icon: 'success',
+    confirmButtonText: 'OK'
+  }).then((result) => {
+    // Stay on the same page
+    window.location.href = window.location.href;
+  });
+});
